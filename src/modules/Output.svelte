@@ -1,8 +1,11 @@
 <script lang="ts">
   import { writeText } from "@tauri-apps/api/clipboard";
+  import { fade } from "svelte/transition";
 
-  export let outstr = "5";
+  export let outstr = "";
   export let outtok = "";
+
+  let old_str = "";
 
   function copy_output() {
     writeText(outstr);
@@ -15,7 +18,7 @@
 
 <div class="center">
   {#if outstr.length > 0}
-    <table>
+    <table transition:fade={{ duration: 250 }}>
       <tr>
         <th>Output</th>
         <th
@@ -51,8 +54,8 @@
   }
 
   .center {
-    font-family: "Ubuntu Bold", sans-serif;
-    font-size: 18px;
+    font-family: "Ubuntu Medium", sans-serif;
+    font-size: 22px;
   }
 
   .center > table {
@@ -70,8 +73,10 @@
     border: none;
     border-radius: 4px;
 
-    padding: 7px;
+    padding: 9px;
     width: 70px;
+
+    font-size: 18px;
 
     background-color: #152530;
     cursor: pointer;
@@ -81,5 +86,9 @@
 
   .copy-btn:hover {
     background-color: #1a2f3d;
+  }
+
+  .copy-btn:active {
+    background-color: #000000;
   }
 </style>

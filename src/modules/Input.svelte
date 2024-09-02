@@ -17,21 +17,34 @@
   let error_str = "";
 
   function writeConfig(mode: string) {
-    // writing config
-    config = {
-      input: input_field,
-      token: token_field,
-      mode: mode,
-    };
+    outstr = "";
+    outtok = "";
 
-    // checking config
-    invoke("check_config", config)
-      .then((_) => {
-        activated = true;
-      })
-      .catch((e) => {
-        error_str = "Error: " + e;
-      });
+    setTimeout(() => {
+      config = {
+        input: input_field,
+        token: token_field,
+        mode: mode,
+      };
+
+      // checking config
+      invoke("check_config", config)
+        .then((_) => {
+          activated = true;
+
+          invoke("crypt_string", {
+            input: config.input,
+            token: config.token,
+            mode: config.mode,
+          }).then((str) => {
+            outstr = str;
+            outtok = config.token;
+          });
+        })
+        .catch((e) => {
+          error_str = "Error: " + e;
+        });
+    }, 1000);
   }
 
   function generateToken() {

@@ -37,6 +37,6 @@
 
     <br />
 
-    <Output></Output>
+    <Output bind:outstr={output_string} bind:outtok={output_token}></Output>
   </div>
 </main>
