@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Ubuntu Regular';
+  src: url(fonts/Ubuntu/Ubuntu-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'Ubuntu Medium';
+  src: url(fonts/Ubuntu/Ubuntu-Medium.ttf)
+}
+
+@font-face {
+  font-family: 'Ubuntu Bold';
+  src: url(fonts/Ubuntu/Ubuntu-Bold.ttf)
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0e141f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.center {
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  left: 50%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.title {
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 30px;
+
+  height: 20px;
+}
+
+.title > span {
+  color: gray;
+
+  font-family: "Ubuntu Bold", sans-serif;
+  font-size: 18px;
+}
+
+.subtitle {
+  font-family: "Ubuntu Medium", sans-serif;
+  font-size: 14px;
+}
+
+
