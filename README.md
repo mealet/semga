@@ -45,4 +45,4 @@ cargo tauri build
 
 ## 💀 License
 Project licensed under the MIT License.
-See more in License file.
+See more in [License file](https://github.com/mealet/semga/blob/main/LICENSE)
